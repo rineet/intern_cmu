@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::selection {
+    background: #dbeafe;
+  }
+}
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+}
+
+.glass-shell {
+  @apply bg-white border border-gray-200 rounded-2xl shadow-sm;
+}
+
+.paper-card {
+  @apply bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-md transition;
+}
+
+.input-surface {
+  @apply w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900;
+}
+
+.soft-button {
+  @apply rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-700 hover:bg-gray-50;
+}
+
+.primary-button {
+  @apply rounded-xl bg-black text-white px-4 py-2 hover:bg-gray-800;
+}
+
+.chip {
+  @apply rounded-full border border-gray-300 bg-gray-100 px-3 py-1 text-sm text-gray-700;
+}
+
+.label {
+  @apply text-xs uppercase tracking-wider text-gray-500;
+}
+
+.eyebrow {
+  @apply text-xs uppercase tracking-wider text-gray-400;
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-gray-200 rounded-xl;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-blue-500;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-3 font-medium text-white hover:bg-blue-700;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center rounded-lg border border-gray-300 px-5 py-3 font-medium text-gray-700 hover:bg-gray-50;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700;
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold text-gray-900;
+  }
+
+  .paper-card {
+    @apply border border-gray-200 rounded-xl bg-white p-5;
+  }
+}

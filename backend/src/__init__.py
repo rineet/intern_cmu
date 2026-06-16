@@ -1,0 +1,1 @@
+"""Research Finder backend package."""

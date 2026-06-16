@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+requests
+feedparser
+duckdb
+python-dotenv
+python-multipart
+sqlalchemy
+duckdb-engine
+httpx
