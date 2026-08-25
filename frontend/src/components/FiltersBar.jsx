@@ -1,17 +1,13 @@
 import React from 'react'
 
-export default function FiltersBar({ source, setSource, year, setYear, text, setText, years }) {
+// CHANGED: Removed 'source' and 'setSource' from props
+export default function FiltersBar({ year, setYear, text, setText, years }) {
   return (
     <div className="card p-4">
-      <div className="grid gap-3 lg:grid-cols-[180px_180px_minmax(0,1fr)]">
-        <label className="block space-y-2">
-          <span className="label">Source</span>
-          <select value={source} onChange={(event) => setSource(event.target.value)} className="input">
-            <option value="all">All sources</option>
-            <option value="openalex">OpenAlex</option>
-            <option value="arxiv">arXiv</option>
-          </select>
-        </label>
+      {/* CHANGED: Adjusted grid columns since we removed one item */}
+      <div className="grid gap-3 lg:grid-cols-[180px_minmax(0,1fr)]">
+        
+        {/* THE SOURCE LABEL BLOCK WAS DELETED HERE */}
 
         <label className="block space-y-2">
           <span className="label">Publication year</span>

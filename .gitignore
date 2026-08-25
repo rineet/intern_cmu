@@ -40,6 +40,9 @@ frontend/.env
 
 backend/data/
 backend/*.duckdb
+data/*.duckdb
+data/*.wal
+search_outputs/
 
 # ========================================
 # Logs
@@ -91,3 +94,6 @@ dist/
 
 *.tmp
 *.temp
+
+# Jupyter
+**/.ipynb_checkpoints/

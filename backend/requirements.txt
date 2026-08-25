@@ -1,10 +1,9 @@
 fastapi
 uvicorn[standard]
+pydantic
 requests
-feedparser
-duckdb
 python-dotenv
-python-multipart
 sqlalchemy
+duckdb
 duckdb-engine
-httpx
+google-genai

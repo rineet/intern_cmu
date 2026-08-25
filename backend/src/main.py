@@ -14,7 +14,7 @@ from .repositories.search_repository import SearchRepository
 from .services.gemini_service import GeminiKeywordService
 from .services.paper_sources import PaperSourceService
 from .services.search_service import SearchService
-
+from .services.semantic_scholar_service import SemanticScholarService
 
 configure_logging()
 logger = logging.getLogger(__name__)
@@ -30,6 +30,7 @@ async def lifespan(app: FastAPI):
         repository=app.state.repository,
         keyword_service=GeminiKeywordService(settings=settings),
         source_service=PaperSourceService(settings=settings),
+        semantic_service = SemanticScholarService(settings=settings),
     )
     logger.info("Research Finder backend started")
     yield

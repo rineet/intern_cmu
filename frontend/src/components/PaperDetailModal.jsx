@@ -17,8 +17,8 @@ export default function PaperDetailModal({ paper, onClose }) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 px-4 py-8 backdrop-blur-sm">
-      <div className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[1.5rem] border border-white/10 bg-white p-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/40 px-4 py-8 backdrop-blur-sm">
+      <div className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[1.5rem] border border-gray-200 bg-white p-6 shadow-2xl">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="eyebrow">Paper</p>
@@ -30,29 +30,35 @@ export default function PaperDetailModal({ paper, onClose }) {
         </div>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          {/* CHANGED: Swapped transparent dark backgrounds for solid light gray (bg-gray-50) */}
+          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-4">
             <p className="label">Metadata</p>
-            <dl className="mt-3 space-y-2 text-sm text-slate-200">
+            {/* CHANGED: Fixed text colors for metadata to be fully opaque */}
+            <dl className="mt-3 space-y-2 text-sm text-gray-800">
               <div className="flex gap-2">
-                <dt className="w-20 text-slate-500">Venue</dt>
-                <dd>{paper.venue || 'Unknown'}</dd>
+                <dt className="w-24 text-gray-500">Venue</dt>
+                <dd className="font-medium text-gray-900">{paper.venue || 'Unknown'}</dd>
               </div>
               <div className="flex gap-2">
-                <dt className="w-20 text-slate-500">Year</dt>
+                <dt className="w-24 text-gray-500">Year</dt>
                 <dd>{paper.year || 'n/a'}</dd>
               </div>
               <div className="flex gap-2">
-                <dt className="w-20 text-slate-500">Source</dt>
-                <dd>{paper.source}</dd>
+                <dt className="w-24 text-gray-500">Citations</dt>
+                <dd>{paper.citation_count ?? '0'}</dd>
               </div>
               <div className="flex gap-2">
-                <dt className="w-20 text-slate-500">DOI</dt>
+                <dt className="w-24 text-gray-500">API Source</dt>
+                <dd>{paper.source === 'openalex' ? 'OpenAlex' : 'Semantic Scholar'}</dd>
+              </div>
+              <div className="flex gap-2">
+                <dt className="w-24 text-gray-500">DOI</dt>
                 <dd className="break-all">{paper.doi || 'Unavailable'}</dd>
               </div>
             </dl>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-4">
             <p className="label">Links</p>
             <div className="mt-3 flex flex-col gap-3">
               {paper.pdf_url ? (
@@ -60,7 +66,7 @@ export default function PaperDetailModal({ paper, onClose }) {
                   Open PDF
                 </a>
               ) : (
-                <div className="rounded-xl border border-dashed border-white/10 px-4 py-3 text-sm text-slate-400">
+                <div className="rounded-xl border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
                   PDF link unavailable
                 </div>
               )}
@@ -73,9 +79,10 @@ export default function PaperDetailModal({ paper, onClose }) {
           </div>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+        <div className="mt-6 rounded-2xl border border-gray-200 bg-gray-50 p-4">
           <p className="label">Abstract</p>
-          <p className="mt-3 whitespace-pre-wrap leading-7 text-slate-200">
+          {/* CHANGED: Made abstract text highly readable with text-gray-800 */}
+          <p className="mt-3 whitespace-pre-wrap leading-7 text-gray-800">
             {paper.abstract || 'No abstract available from the source.'}
           </p>
         </div>

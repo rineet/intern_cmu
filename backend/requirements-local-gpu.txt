@@ -1,0 +1,8 @@
+-r requirements.txt
+
+# Required only for RERANKER_MODE=local.
+numpy
+scipy
+rank-bm25
+sentence-transformers
+torch

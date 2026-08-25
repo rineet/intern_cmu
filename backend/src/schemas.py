@@ -24,6 +24,7 @@ class ExpandedKeywords(BaseModel):
 class SearchRequest(BaseModel):
     query: str
     timeline_months: int | None = Field(default=None, ge=1, le=120)
+    top_k: int = Field(default=50, ge=1, le=1000)
 
 # ==========================================================
 # Paper Models

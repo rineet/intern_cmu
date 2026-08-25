@@ -32,11 +32,11 @@ export default function KeywordGroups({ expandedKeywords }) {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-        <KeywordList title="Canonical" values={expandedKeywords.canonical_terms} />
-        <KeywordList title="Acronyms" values={expandedKeywords.acronyms} />
-        <KeywordList title="Expanded" values={expandedKeywords.expanded_terms} />
-        <KeywordList title="Related" values={expandedKeywords.related_terms} />
-        <KeywordList title="Domains" values={expandedKeywords.research_domains} />
+        {/* <KeywordList title="Canonical" values={expandedKeywords.canonical_terms} /> */}
+        {/* <KeywordList title="Acronyms" values={expandedKeywords.acronyms} /> */}
+        {/* <KeywordList title="Expanded" values={expandedKeywords.expanded_terms} /> */}
+        {/* <KeywordList title="Related" values={expandedKeywords.related_terms} /> */}
+        {/* <KeywordList title="Domains" values={expandedKeywords.research_domains} /> */}
         <KeywordList title="Queries" values={expandedKeywords.search_queries} />
       </div>
     </section>

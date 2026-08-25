@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-const samplePrompts = [
-  'Federated Learning for Healthcare',
-  'Silent VOLE for MPC',
-  'Vision Language Models for Education',
-]
-
 const timelineOptions = [
   { value: 'all', label: 'Any time' },
   { value: '1', label: 'Last month' },
@@ -86,21 +80,6 @@ export default function SearchForm({ value, onChange, onSubmit, isLoading, varia
             </button>
           </div>
         </div>
-
-        {!isCompact && (
-          <div className="flex flex-wrap gap-2">
-            {samplePrompts.map((prompt) => (
-              <button
-                key={prompt}
-                type="button"
-                onClick={() => handleExample(prompt)}
-                className="chip hover:bg-white/[0.08]"
-              >
-                {prompt}
-              </button>
-            ))}
-          </div>
-        )}
       </div>
     </form>
   )

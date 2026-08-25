@@ -8,6 +8,7 @@ export default function HomePage({
   setTimelineMonths,
   onSearch,
   isSearching,
+  error, // NEW: Accept error prop
 }) {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
@@ -20,6 +21,13 @@ export default function HomePage({
           Search academic papers using natural language.
         </p>
       </div>
+      
+      {/* NEW: Error banner */}
+      {error && (
+        <div className="mb-6 rounded-xl bg-red-50 border border-red-200 p-4 text-center text-red-700">
+          {error}
+        </div>
+      )}
 
       <SearchForm
         value={query}
